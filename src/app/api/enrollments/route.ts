@@ -165,7 +165,7 @@ export const DELETE = async (request: NextRequest) => {
   //verify token and get "studentId" and "role" information here
   const rawAuthHeader = headers().get('authorization');
 
-  if (!rawAuthHeader ||!rawAuthHeader.startsWith('Bearer ')) {
+  if (!rawAuthHeader ||!rawAuthHeader.startsWith("Bearer ")) {
     return NextResponse.json(
       {
         ok: false,
@@ -175,7 +175,7 @@ export const DELETE = async (request: NextRequest) => {
     );
   }
 
-  const token = rawAuthHeader.split(' ')[1];
+  const token = rawAuthHeader.split(" ")[1];
 
   const secret = process.env.JWT_SECRET || 'This is my special secret';
   let studentId = null;
